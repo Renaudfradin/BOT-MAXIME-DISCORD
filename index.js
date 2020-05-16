@@ -13,8 +13,12 @@ client.on("message" , msg => {
     }else if (msg.content === `${PREFIX}batar`) {
         msg.delete(msg);
         msg.reply(`Le message precedent a etait supprimer`);
+    }else if(msg.content === `${PREFIX}help`){
+        msg.reply("`\n Voicie les commande du bot \n !hello = Bonjour maitre \n !batar = suprime le dernier message \n !bonjour = Bonjour au grand maitre quand nono a ecrit \n !help = affiche les commande du bot`");
     }else if (msg.author.tag === "NONO70063#4609" && msg.content === `${PREFIX}bonjour`) {
         msg.reply(`Bonjour au grand maitre`);
+    }else if(msg.content === `${PREFIX}bonjour`){
+        msg.reply(`Tu n'est pa NONO`);
     }
 });
 

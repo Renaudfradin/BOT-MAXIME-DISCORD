@@ -8,12 +8,14 @@ client.on("ready" , () => {
 });
 
 client.on("message" , msg => {
-    if (msg.content === "hello") {
+    if (msg.content === `${PREFIX}hello`) {
         msg.reply("BONJOUR MAITRE");
-    }else if (msg.content === "batar") {
+    }else if (msg.content === `${PREFIX}batar`) {
         msg.delete(msg);
         msg.reply(`Le message precedent a etait supprimer`);
-    } 
+    }else if (msg.author.tag === "NONO70063#4609" && msg.content === `${PREFIX}bonjour`) {
+        msg.reply(`Bonjour au grand maitre`);
+    }
 });
 
 client.login(TOKEN);

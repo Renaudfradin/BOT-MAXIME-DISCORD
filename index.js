@@ -14,7 +14,7 @@ client.on("message" , msg => {
     }else if(msg.content === `${PREFIX}help`){
         msg.reply("`\n Voicie les commande du bot \n !hello = Bonjour au grand maitre quand nono parle et quand c'est une autre bonjour \n !batar = suprime le dernier message \n !help = affiche les commande du bot`");
     }else if (msg.author.tag === "NONO70063#4609" && msg.content === `${PREFIX}hello`) {
-        msg.reply(`Bonjour au grand maitre`);
+        msg.reply(`Bonjour ô grand maitre NONO`);
     }else if(msg.content === `${PREFIX}hello`){
         msg.reply(`Bonjour`);
     }

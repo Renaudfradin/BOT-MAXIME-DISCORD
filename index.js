@@ -1,7 +1,9 @@
+const fs = require("fs");
 const Discord = require("discord.js");
 const { TOKEN, PREFIX } = require("./config");
-const client = new Discord.Client();
 
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 client.on("ready" , () => {
     console.log(`Logged in as ${client.user.tag}!`);

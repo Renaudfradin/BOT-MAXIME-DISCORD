@@ -28,7 +28,7 @@ client.on("message" , msg => {
         return;
     }
     if (!client.commands.has(command)) {
-        msg.reply("bip");
+        msg.reply("La commande n'existe pas");
         return;
     }
     client.commands.get(command).execute(msg, arg);

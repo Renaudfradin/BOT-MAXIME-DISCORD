@@ -11,7 +11,7 @@ console.log(commandFiles);
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
-    console.log(client.commands);
+    console.log(`commande charge : ${command.name}`);
 }
 
 client.on("ready" , () => {
@@ -31,7 +31,7 @@ client.on("message" , msg => {
         msg.reply("La commande n'existe pas");
         return;
     }
-    client.commands.get(command).execute(msg, arg);
+    client.commands.get(command).execute(client ,msg, arg);
 });
 
 client.login(TOKEN);

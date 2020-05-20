@@ -17,8 +17,8 @@ module.exports = {
             .addField("Je suis le champs" , "Je suis la valeur ")
             .addFields(
                 {name: "1", value: nombreramdom()},
-                {name: "2", value: nombreramdom()},
-                {name: "3", value: nombreramdom()},
+                {name: "1", value: nombreramdom()},
+                {name: "1", value: nombreramdom()},
                 {name: "4", value: nombreramdom()},
                 {name: "5", value: nombreramdom()},
                 {name: "6", value: nombreramdom()}

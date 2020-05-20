@@ -20,18 +20,22 @@ client.on("ready" , () => {
 
 client.on("message" , msg => {
     const arg = msg.content.slice(PREFIX.length).split(/ +/); //cette variable va recupere les argumant derriere une comande ex: !user @nono
-    console.log(arg);
+    //console.log(arg);
     const command = arg.shift().toLowerCase(); // recupere la commande ex: !user
-    console.log(command);
-
+    //console.log(command);
     if(!msg.content.startsWith(PREFIX) || msg.author.bot){   // va empecher le spam
         return;
     }
-    if (!client.commands.has(command)) {
-        msg.reply("La commande n'existe pas");
-        return;
+    if(msg.channel.name == "bot"){
+        if (!client.commands.has(command)) {
+            msg.reply("La commande n'existe pas");
+            return;
+        }
+        client.commands.get(command).execute(client ,msg, arg);
+    }else{
+        msg.channel.send(`Aller dans le salon bot svp , pour pouvoir utiliser les commande du bot. Actuellement vous ete dans le chanel : ${msg.channel.name}`);
     }
-    client.commands.get(command).execute(client ,msg, arg);
+    
 });
 
 client.login(TOKEN);
